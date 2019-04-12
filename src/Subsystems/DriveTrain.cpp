@@ -1,4 +1,8 @@
 #include  "Subsystems/DriveTrain.h"
+pros::Motor frontLeft(motorports::k_frontLeft);
+pros::Motor frontRight(motorports::k_frontRight);
+pros::Motor backLeft(motorports::k_backLeft);
+pros::Motor backRight(motorports::k_backRight);
 
   void TankDrive(double left, double right){
     if (abs(left) > 15 || (right) > 15){

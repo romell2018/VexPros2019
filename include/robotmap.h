@@ -1,8 +1,8 @@
 namespace motorports
 {
 constexpr
-int frontLeft = 1,
-frontRight = 2,
-backLeft = 3,
-backRight = 4;
+int k_frontLeft = 1,
+k_frontRight = 2,
+k_backLeft = 3,
+k_backRight = 4;
 }
