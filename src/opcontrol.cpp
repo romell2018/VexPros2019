@@ -1,5 +1,6 @@
 #include "main.h"
 #include "Subsystems/DriveTrain.h"
+#include "Subsystems/Arm.h"
 /**
  * Runs the operator control code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
@@ -22,7 +23,15 @@ void opcontrol() {
 		                 (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);
 		TankDrive(master.get_analog(ANALOG_LEFT_Y), master.get_analog(ANALOG_RIGHT_Y));
 	//	ArcadeDrive(master.get_analog(ANALOG_LEFT_Y), master.get_analog(ANALOG_LEFT_X));
-
+	if (master.get_digital(DIGITAL_R1)) {
+			ArmUp();
+	}
+	else if (master.get_digital(DIGITAL_R2)) {
+			ArmDown();
+	}
+	else {
+			ArmOff();
+	}
 		pros::delay(20);
 	}
 }
