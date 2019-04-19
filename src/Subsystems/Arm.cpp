@@ -8,5 +8,5 @@ void ArmDown(){
   arm.move_velocity(-100); // This is -100 because it's a 100rpm motor
 }
 void ArmOff(){
-  arm.move_velocity(0); 
+  arm.move_velocity(0);
 }

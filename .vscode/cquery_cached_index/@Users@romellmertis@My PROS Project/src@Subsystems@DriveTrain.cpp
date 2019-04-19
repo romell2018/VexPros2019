@@ -1,4 +1,6 @@
 #include  "Subsystems/DriveTrain.h"
+#include "robotmap.h"
+
 pros::Motor frontLeft(motorports::k_frontLeft);
 pros::Motor frontRight(motorports::k_frontRight);
 pros::Motor backLeft(motorports::k_backLeft);
@@ -29,4 +31,17 @@ pros::Motor backRight(motorports::k_backRight);
       frontRight.move(0);
       backRight.move(0);
   }
+  }
+  void MecanumDrive(double magnitude, double strafe, double rotation){
+    if (abs(magnitude) > 15 || (strafe) > 15 || (rotation) > 15){
+    frontLeft.move(magnitude + strafe + rotation);
+    backLeft.move(magnitude + strafe - rotation);
+    frontRight.move(magnitude - strafe - rotation);
+    backRight.move(magnitude - strafe + rotation);
+      }else{
+    frontLeft.move(0);
+    backLeft.move(0);
+    frontRight.move(0);
+    backRight.move(0);
+    }
   }

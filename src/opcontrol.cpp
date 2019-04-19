@@ -23,6 +23,7 @@ void opcontrol() {
 		                 (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);
 		TankDrive(master.get_analog(ANALOG_LEFT_Y), master.get_analog(ANALOG_RIGHT_Y));
 	//	ArcadeDrive(master.get_analog(ANALOG_LEFT_Y), master.get_analog(ANALOG_LEFT_X));
+	//	MecanumDrive(master.get_analog(ANALOG_LEFT_Y), master.get_analog(ANALOG_LEFT_X), master.get_analog(ANALOG_RIGHT_X));
 	if (master.get_digital(DIGITAL_R1)) {
 			ArmUp();
 	}
